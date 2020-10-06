@@ -16,7 +16,7 @@ class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
       .then(data => this.setState({movies: data.movies}))
-      .catch(error => this.state.error = 'YA DONE MESSED UP AY-AY-RON!')
+      .catch(error => this.setState.error = 'YA DONE MESSED UP AY-AY-RON!')
   }
 
   render() {
