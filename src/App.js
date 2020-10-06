@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Header from './Header'
+import Header from './Header';
+import Movies from './Movies';
 import './App.css';
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
     return(
       <div className="App">
         <Header />
+        <Movies moviesList={this.state.movies} />
       </div>
     )
   }
