@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Login from './Login';
 import Movies from './Movies';
 import './App.css';
 
@@ -24,6 +25,7 @@ class App extends Component {
       <main className="App">
         <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
+        <Login />
         <Movies moviesList={this.state.movies} />
       </main>
     )
