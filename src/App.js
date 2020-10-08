@@ -9,8 +9,13 @@ class App extends Component {
     super()
     this.state= {
       movies: [],
+      loginData: {},
       error: ''
     }
+  }
+
+  updateLoginData = (loginData) => {
+    this.state.loginData = loginData;
   }
 
   componentDidMount() {
@@ -20,12 +25,19 @@ class App extends Component {
       .catch(error => this.setState.error = 'YA DONE MESSED UP AY-AY-RON!')
   }
 
-  render() {
+  // toggleLoginView = () => {
+  //   this.setState({ isLoginView: !this.state.isLoginView})
+  // }
+
+  render() { 
     return(
       <main className="App">
+        {/* <Header toggleLoginView={this.toggleLoginView} /> */}
         <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
-        <Login />
+        {/* {this.state.isLoginView && <Login updateLoginData={this.updateLoginData} />} */}
+        <Login updateLoginData={this.updateLoginData} />
+        {/* {!this.state.isLoginView && <Movies moviesList={this.state.movies} />} */}
         <Movies moviesList={this.state.movies} />
       </main>
     )
