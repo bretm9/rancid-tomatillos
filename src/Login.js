@@ -42,12 +42,12 @@ class Login extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  // loginUser = (event) => {
-  //   event.preventDefault();
-  //   this.props.updateLoginData({ email: this.state.email, password: this.state.password });
-  //   // console.log(this.props.loginData)
-  //   this.clearInputs();
-  // }
+  loginUser = (event) => {
+    event.preventDefault();
+    this.props.updateLoginData({ email: this.state.email, password: this.state.password });
+    // console.log(this.props.loginData)
+    this.clearInputs();
+  }
   
   render() {
     return (
