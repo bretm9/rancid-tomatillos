@@ -38,9 +38,9 @@ class Login extends Component {
   //   this.setState({ email: '', password: ''})
   // }
 
-  // updateValue = (event) => {
-  //   this.setState({ [event.target.name]: event.target.value });
-  // }
+  updateValue = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  }
 
   // loginUser = (event) => {
   //   event.preventDefault();
