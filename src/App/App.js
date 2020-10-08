@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Login from './Login';
-import Movies from './Movies';
+import Header from '../Header/Header';
+import Login from '../Login/Login';
+import Movies from '../Movies/Movies';
 import './App.css';
+import { getAllMovies } from '../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -15,12 +16,11 @@ class App extends Component {
   }
 
   updateLoginData = (loginData) => {
-    this.state.loginData = loginData;
+    this.setState.loginData = loginData;
   }
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+    getAllMovies()
       .then(data => this.setState({movies: data.movies}))
       .catch(error => this.setState.error = 'YA DONE MESSED UP AY-AY-RON!')
   }
