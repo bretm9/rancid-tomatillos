@@ -34,9 +34,9 @@ class Login extends Component {
   //   }
   // }
 
-  // clearInputs = () => {
-  //   this.setState({ email: '', password: ''})
-  // }
+  clearInputs = () => {
+    this.setState({ email: '', password: ''})
+  }
 
   updateValue = (event) => {
     this.setState({ [event.target.name]: event.target.value });
