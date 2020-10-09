@@ -8,7 +8,7 @@ import { getAllMovies } from '../apiCalls'
 class App extends Component {
   constructor() {
     super()
-    this.state= {
+    this.state = {
       movies: [],
       loginData: {},
       error: ''
