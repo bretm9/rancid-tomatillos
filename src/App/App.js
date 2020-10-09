@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Movies from '../Movies/Movies';
+import ShowPage from '../ShowPage/ShowPage';
 import './App.css';
 import { getAllMovies } from '../apiCalls'
 
 class App extends Component {
   constructor() {
     super()
-    this.state = {
+    this.state= {
       movies: [],
       loginData: {},
+      selectedMovieId: 694919,
       error: ''
     }
   }
@@ -29,10 +31,18 @@ class App extends Component {
   //   this.setState({ isLoginView: !this.state.isLoginView})
   // }
 
+  findMovieIndexById(id) {
+    let foundMovie = this.state.movies.find(movie => {
+      return movie.id === id;
+    })
+    return this.state.movies.indexOf(foundMovie)
+  }
+
   render() { 
     return(
       <main className="App">
         {/* <Header toggleLoginView={this.toggleLoginView} /> */}
+        <ShowPage movie={this.state.movies[this.findMovieIndexById(this.state.selectedMovieId)]} />
         <Header />
         {this.state.error && <h2>{this.state.error}</h2>}
         {/* {this.state.isLoginView && <Login updateLoginData={this.updateLoginData} />} */}
