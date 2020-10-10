@@ -65,7 +65,12 @@ class Login extends Component {
           onChange={this.updateValue}
           value={this.state.password}>
         </input>
-        <button className="login-button" onClick={this.loginUser}>Login</button>
+        <button 
+          className="login-button" 
+          onClick={this.loginUser}
+          data-testid="login-button">
+            Login
+        </button>
       </form>
     )
   }
