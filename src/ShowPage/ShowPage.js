@@ -5,7 +5,7 @@ function ShowPage(props) {
     return (
       <section>
         <h1>{props.movie.title}</h1>
-        <img src={props.movie.backdrop_path} alt="movie-backdrop"></img>
+        <img src={props.movie.backdrop_path} alt={props.movie.id + '-movie-backdrop'}></img>
         <p>{props.movie.overview}</p>
         <p>{props.movie.release_date}</p>
         <h3>General Info:</h3>
