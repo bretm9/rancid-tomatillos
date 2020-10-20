@@ -37,7 +37,7 @@ export const deleteUserRating = (userId, ratingId) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${userId}/ratings/${ratingId}`, { method: 'delete' })
 }
 
-// export const getMovieDetails = (movieId) => {
-//   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
-//   .then(response => response.json())
-// }
+export const getMovieDetails = (movieId) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
+  .then(response => response.json())
+}
