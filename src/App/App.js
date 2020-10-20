@@ -4,51 +4,67 @@ import Login from '../Login/Login';
 import Movies from '../Movies/Movies';
 import ShowPage from '../ShowPage/ShowPage';
 import './App.css';
-import { getAllMovies } from '../apiCalls'
+import { getAllMovies, getUserRatings } from '../apiCalls'
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super()
     this.state= {
       movies: [],
-      loginData: {},
-      selectedMovieId: 694919,
+      loginData: "",
+      userRatings: "",
       error: ''
     }
   }
 
-  updateLoginData = (loginData) => {
-    this.setState.loginData = loginData;
-  }
+  // updateAppState = (proptery, data) => {
+  //   this.setState({ [proptery]: data });
+  // }
 
   componentDidMount() {
     getAllMovies()
       .then(data => this.setState({movies: data.movies}))
-      .catch(error => this.setState.error = 'YA DONE MESSED UP AY-AY-RON!')
+      .catch(error => this.setState.error = 'Error: Could not get movies from server') 
   }
 
-  // toggleLoginView = () => {
-  //   this.setState({ isLoginView: !this.state.isLoginView})
+  // componentDidUpdate(prevProps) {
+  //   if (this.userRatings !== prevProps.userRatings) {
+  //     this.updateUserRatings();
+  //   }
   // }
 
-  findMovieIndexById(id) {
-    let foundMovie = this.state.movies.find(movie => {
-      return movie.id === id;
-    })
-    return this.state.movies.indexOf(foundMovie)
-  }
+  // updateUserRatings = async () => {
+  //   let resolvedUserRatings = await getUserRatings(this.state.loginData.user.id)
+  //   let parsedUserRatings = await resolvedUserRatings.json()
+  //   if (resolvedUserRatings.ok) {
+  //     this.updateAppState('userRatings', parsedUserRatings);
+  //   } else {
+  //     this.state.error = "Error: Could not get user ratings from server"
+  //   }
+  // }
 
   render() { 
     return(
       <main className="App">
-        {/* <Header toggleLoginView={this.toggleLoginView} /> */}
-        <ShowPage movie={this.state.movies[this.findMovieIndexById(this.state.selectedMovieId)]} />
-        <Header />
+        <Header loginData={this.state.loginData}/>
         {this.state.error && <h2>{this.state.error}</h2>}
-        {/* {this.state.isLoginView && <Login updateLoginData={this.updateLoginData} />} */}
-        <Login updateLoginData={this.updateLoginData} />
-        {/* {!this.state.isLoginView && <Movies moviesList={this.state.movies} />} */}
-        <Movies moviesList={this.state.movies} />
+        <Route 
+          path="/movies/:id" 
+          render={({ match }) => {
+            const selectedMovie = this.state.movies.find(movie => movie.id === +match.params.id)
+            return (
+              <ShowPage 
+                movie={selectedMovie} 
+                userRatings={this.state.userRatings} 
+                loginData={this.state.loginData}
+                updateUserRatings={this.updateUserRatings}
+              />
+            )
+          }} 
+        />
+        <Route exact path="/login" render={() => <Login updateAppState={this.updateAppState}/>} />
+        <Route exact path="/" render={() => <Movies moviesList={this.state.movies} userRatings={this.state.userRatings} loggedIn={this.state.loginData} />} />
       </main>
     )
   }
