@@ -50,14 +50,14 @@ class ShowPage extends Component {
     return this.props.userRatings.ratings.find(rating => rating.movie_id === this.props.movie.id)
   }
 
-  // getRatingNumber = () => {
-  //   const movieRating = this.findRating()
-  //   if (movieRating) {
-  //     return Number(movieRating.rating).toFixed(2);
-  //   } else {
-  //     return "You haven't rated this yet!";
-  //   }
-  // }
+  getRatingNumber = () => {
+    const movieRating = this.findRating()
+    if (movieRating) {
+      return Number(movieRating.rating).toFixed(2);
+    } else {
+      return "You haven't rated this yet!";
+    }
+  }
   
   render() {
     if (this.state.movieDetails) {
