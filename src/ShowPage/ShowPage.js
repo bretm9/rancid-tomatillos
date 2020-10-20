@@ -27,9 +27,9 @@ class ShowPage extends Component {
     .then(data => this.setState({movieDetails: data.movie}));
   }
 
-  // updateRatingSelection = (event) => {
-  //   this.setState({selectedRating: event.target.value});
-  // }
+  updateRatingSelection = (event) => {
+    this.setState({selectedRating: event.target.value});
+  }
 
   // updateRating = async () => {
   //   const ratingData = { movie_id: this.props.movie.id, rating: +this.state.selectedRating };
