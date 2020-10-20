@@ -18,9 +18,9 @@ class App extends Component {
     }
   }
 
-  // updateAppState = (proptery, data) => {
-  //   this.setState({ [proptery]: data });
-  // }
+  updateAppState = (proptery, data) => {
+    this.setState({ [proptery]: data });
+  }
 
   componentDidMount() {
     getAllMovies()
