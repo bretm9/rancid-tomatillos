@@ -36,10 +36,10 @@ describe('Movies', () => {
 
   // Show movie on click:
 
-  // it('should be be able to click a movie to show page', () => {
-  //   const mockShowMovie = jest.fn();
-  //   userEvent.click(screen.getByAltText('694919-movie-poster-thumbnail'));
-  //   expect(mockShowMovie).toHaveBeenCalled();
-  //   expect(mockShowMovie).toHaveBeenCalledWith(694919);
-  // });
+  it('should be be able to click a movie to show page', () => {
+    const mockShowMovie = jest.fn();
+    userEvent.click(screen.getByAltText('694919-movie-poster-thumbnail'));
+    expect(mockShowMovie).toHaveBeenCalled();
+    expect(mockShowMovie).toHaveBeenCalledWith(694919);
+  });
 });
