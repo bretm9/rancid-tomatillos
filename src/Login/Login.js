@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import { postLogin } from '../apiCalls';
+import { getUserRatings } from '../apiCalls';
 
 class Login extends Component {
   constructor(props) {
@@ -6,33 +9,9 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
+      error: ''
     };
   }
-
-  // postLogin = () => {
-  //   let init = {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({email: this.state.email, password: this.state.password})
-  //   };
-  //   console.log(init)
-  //   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', init)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.state.successfulLogin = true;
-  //       console.log(this.state.successfulLogin)
-  //     })
-  //     .catch(err => this.state.successfulLogin = false)
-  // }
-
-  // login = () => {
-  //   this.postLogin();
-  //   if (this.state.successfulLogin) {
-  //     // this.props.toggleLoginView();
-  //   }
-  // }
 
   clearInputs = () => {
     this.setState({ email: '', password: ''})
@@ -42,11 +21,24 @@ class Login extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  loginUser = (event) => {
-    event.preventDefault();
-    this.props.updateLoginData({ email: this.state.email, password: this.state.password });
-    // console.log(this.props.loginData)
+  loginUser = async (event) => {
+    const loginData = { email: this.state.email, password: this.state.password }
+    event.stopPropagation()
     this.clearInputs();
+    const resolvedLogin = await postLogin(loginData)
+    const parsedLogin = await resolvedLogin.json()
+    let resolvedUserRatings;
+    let parsedUserRatings;
+    if (resolvedLogin.ok) {
+      resolvedUserRatings = await getUserRatings(parsedLogin.user.id)
+      parsedUserRatings = await resolvedUserRatings.json()
+    }
+    if (resolvedLogin.ok && resolvedUserRatings.ok) {
+      this.props.updateAppState('loginData', parsedLogin);
+      this.props.updateAppState('userRatings', parsedUserRatings);
+    } else {
+      this.setState({error: 'Login was unsuccessful. Try again'})
+    }
   }
   
   render() {
@@ -65,12 +57,14 @@ class Login extends Component {
           onChange={this.updateValue}
           value={this.state.password}>
         </input>
-        <button 
-          className="login-button" 
+        <NavLink
+          to="/" 
           onClick={this.loginUser}
+          className="login-button"
           data-testid="login-button">
-            Login
-        </button>
+          Login
+        </NavLink>
+        {this.state.error && <h3>{this.state.error}</h3>}
       </form>
     )
   }
