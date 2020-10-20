@@ -22,10 +22,10 @@ class ShowPage extends Component {
   //   }
   // }
 
-  // setMovieDetails() {
-  //   getMovieDetails(this.props.movie.id)
-  //   .then(data => this.setState({movieDetails: data.movie}));
-  // }
+  setMovieDetails() {
+    getMovieDetails(this.props.movie.id)
+    .then(data => this.setState({movieDetails: data.movie}));
+  }
 
   // updateRatingSelection = (event) => {
   //   this.setState({selectedRating: event.target.value});
