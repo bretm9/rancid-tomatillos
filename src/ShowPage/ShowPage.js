@@ -31,14 +31,14 @@ class ShowPage extends Component {
     this.setState({selectedRating: event.target.value});
   }
 
-  // updateRating = async () => {
-  //   const ratingData = { movie_id: this.props.movie.id, rating: +this.state.selectedRating };
-  //   if (this.findRating()) {
-  //     await this.removeRating();
-  //   }
-  //   await postUserRating(this.props.loginData.user.id, ratingData);
-  //   this.props.updateUserRatings();
-  // }
+  updateRating = async () => {
+    const ratingData = { movie_id: this.props.movie.id, rating: +this.state.selectedRating };
+    if (this.findRating()) {
+      await this.removeRating();
+    }
+    await postUserRating(this.props.loginData.user.id, ratingData);
+    this.props.updateUserRatings();
+  }
 
   // removeRating = async () => {
   //   const movieRating = this.findRating()
