@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import './movies.css';
 
 function Movies(props) {
-  // let userRatings = props.moviesList.reduce((totalRatings, currentMovie) => {
-  //   let currentRating;
-  //   if (props.userRatings) {
-  //     currentRating = props.userRatings.ratings.find(rating => rating.movie_id === currentMovie.id);
-  //   }
-  //   if (currentRating && props.loggedIn) {
-  //     totalRatings[currentMovie.id] = currentRating.rating;
-  //   } else if (props.loggedIn) {
-  //     totalRatings[currentMovie.id] = "You haven't rated this yet!";
-  //   }
-  //   return totalRatings;
-  // }, {})
+  let userRatings = props.moviesList.reduce((totalRatings, currentMovie) => {
+    let currentRating;
+    if (props.userRatings) {
+      currentRating = props.userRatings.ratings.find(rating => rating.movie_id === currentMovie.id);
+    }
+    if (currentRating && props.loggedIn) {
+      totalRatings[currentMovie.id] = currentRating.rating;
+    } else if (props.loggedIn) {
+      totalRatings[currentMovie.id] = "You haven't rated this yet!";
+    }
+    return totalRatings;
+  }, {})
 
   const moviesToDisplay = props.moviesList.map((movie, index) => {
     return (
