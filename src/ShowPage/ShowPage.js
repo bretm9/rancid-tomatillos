@@ -10,11 +10,11 @@ class ShowPage extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   if (this.props.movie) {
-  //     this.setMovieDetails();
-  //   }
-  // }
+  componentDidMount() {
+    if (this.props.movie) {
+      this.setMovieDetails();
+    }
+  }
 
   // componentDidUpdate(prevProps) {
   //   if (this.props.movie !== prevProps.movie) {
