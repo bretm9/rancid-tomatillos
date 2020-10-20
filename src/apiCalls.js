@@ -33,9 +33,9 @@ export const postUserRating = (userId, ratingData) => {
   .catch(err => console.log(err))
 }
 
-// export const deleteUserRating = (userId, ratingId) => {
-//   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${userId}/ratings/${ratingId}`, { method: 'delete' })
-// }
+export const deleteUserRating = (userId, ratingId) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${userId}/ratings/${ratingId}`, { method: 'delete' })
+}
 
 // export const getMovieDetails = (movieId) => {
 //   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
