@@ -34,15 +34,15 @@ class App extends Component {
   //   }
   // }
 
-  // updateUserRatings = async () => {
-  //   let resolvedUserRatings = await getUserRatings(this.state.loginData.user.id)
-  //   let parsedUserRatings = await resolvedUserRatings.json()
-  //   if (resolvedUserRatings.ok) {
-  //     this.updateAppState('userRatings', parsedUserRatings);
-  //   } else {
-  //     this.state.error = "Error: Could not get user ratings from server"
-  //   }
-  // }
+  updateUserRatings = async () => {
+    let resolvedUserRatings = await getUserRatings(this.state.loginData.user.id)
+    let parsedUserRatings = await resolvedUserRatings.json()
+    if (resolvedUserRatings.ok) {
+      this.updateAppState('userRatings', parsedUserRatings);
+    } else {
+      this.state.error = "Error: Could not get user ratings from server"
+    }
+  }
 
   render() { 
     return(
