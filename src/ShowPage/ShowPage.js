@@ -10,22 +10,22 @@ class ShowPage extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   if (this.props.movie) {
-  //     this.setMovieDetails();
-  //   }
-  // }
+  componentDidMount() {
+    if (this.props.movie) {
+      this.setMovieDetails();
+    }
+  }
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.movie !== prevProps.movie) {
-  //     this.setMovieDetails();
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (this.props.movie !== prevProps.movie) {
+      this.setMovieDetails();
+    }
+  }
 
-  // setMovieDetails() {
-  //   getMovieDetails(this.props.movie.id)
-  //   .then(data => this.setState({movieDetails: data.movie}));
-  // }
+  setMovieDetails() {
+    getMovieDetails(this.props.movie.id)
+    .then(data => this.setState({movieDetails: data.movie}));
+  }
 
   // updateRatingSelection = (event) => {
   //   this.setState({selectedRating: event.target.value});
