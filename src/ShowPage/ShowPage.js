@@ -27,9 +27,9 @@ class ShowPage extends Component {
     .then(data => this.setState({movieDetails: data.movie}));
   }
 
-  // updateRatingSelection = (event) => {
-  //   this.setState({selectedRating: event.target.value});
-  // }
+  updateRatingSelection = (event) => {
+    this.setState({selectedRating: event.target.value});
+  }
 
   // updateRating = async () => {
   //   const ratingData = { movie_id: this.props.movie.id, rating: +this.state.selectedRating };
@@ -46,9 +46,9 @@ class ShowPage extends Component {
   //   this.props.updateUserRatings()
   // }
 
-  // findRating = () => {
-  //   return this.props.userRatings.ratings.find(rating => rating.movie_id === this.props.movie.id)
-  // }
+  findRating = () => {
+    return this.props.userRatings.ratings.find(rating => rating.movie_id === this.props.movie.id)
+  }
 
   // getRatingNumber = () => {
   //   const movieRating = this.findRating()
