@@ -28,11 +28,11 @@ class App extends Component {
       .catch(error => this.setState.error = 'Error: Could not get movies from server') 
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.userRatings !== prevProps.userRatings) {
-  //     this.updateUserRatings();
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (this.userRatings !== prevProps.userRatings) {
+      this.updateUserRatings();
+    }
+  }
 
   updateUserRatings = async () => {
     let resolvedUserRatings = await getUserRatings(this.state.loginData.user.id)
