@@ -16,11 +16,11 @@ class ShowPage extends Component {
     }
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.movie !== prevProps.movie) {
-  //     this.setMovieDetails();
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (this.props.movie !== prevProps.movie) {
+      this.setMovieDetails();
+    }
+  }
 
   setMovieDetails() {
     getMovieDetails(this.props.movie.id)
