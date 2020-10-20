@@ -40,11 +40,11 @@ class ShowPage extends Component {
     this.props.updateUserRatings();
   }
 
-  // removeRating = async () => {
-  //   const movieRating = this.findRating()
-  //   await deleteUserRating(this.props.loginData.user.id, movieRating.id);
-  //   this.props.updateUserRatings()
-  // }
+  removeRating = async () => {
+    const movieRating = this.findRating()
+    await deleteUserRating(this.props.loginData.user.id, movieRating.id);
+    this.props.updateUserRatings()
+  }
 
   findRating = () => {
     return this.props.userRatings.ratings.find(rating => rating.movie_id === this.props.movie.id)
