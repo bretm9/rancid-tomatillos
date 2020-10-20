@@ -3,17 +3,17 @@ export const getAllMovies = () => {
   .then(response => response.json())
 }
   
-// export const postLogin = (loginData) => {
-//   let init = {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(loginData)
-//   };
-//   return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', init)
-//   .catch(err => console.log(err))
-// }
+export const postLogin = (loginData) => {
+  let init = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(loginData)
+  };
+  return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', init)
+  .catch(err => console.log(err))
+}
 
 export const getUserRatings = (userId) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${userId}/ratings`)
