@@ -20,18 +20,18 @@ export const getUserRatings = (userId) => {
   .catch(err => console.log(err))
 }
 
-// export const postUserRating = (userId, ratingData) => {
-//   let init = {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
+export const postUserRating = (userId, ratingData) => {
+  let init = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
     
-//     body: JSON.stringify(ratingData)
-//   };
-//   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${userId}/ratings`, init)
-//   .catch(err => console.log(err))
-// }
+    body: JSON.stringify(ratingData)
+  };
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${userId}/ratings`, init)
+  .catch(err => console.log(err))
+}
 
 // export const deleteUserRating = (userId, ratingId) => {
 //   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${userId}/ratings/${ratingId}`, { method: 'delete' })
