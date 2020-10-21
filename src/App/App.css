@@ -7,6 +7,13 @@ html {
   color: #fff;
 }
 
+.nav {
+  padding: .5em;
+  margin: .5em;
+  background-color: rgb(254, 252, 214);
+  border-radius: .5em
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
