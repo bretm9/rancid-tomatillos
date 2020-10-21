@@ -8,7 +8,7 @@ function Header(props) {
         <h1>Rancid Tomatillos</h1>
         <h3>Hello, {props.loginData.user.name}</h3>
         <NavLink to="/" className="nav">Homepage</NavLink>
-        <NavLink to="/login" className="nav">Logout</NavLink>
+        <NavLink to="/login" className="nav" onClick={props.logoutUser}>Logout</NavLink>
       </section>
     )
   }
