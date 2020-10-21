@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { postLogin } from '../apiCalls';
 import { getUserRatings } from '../apiCalls';
+import PropTypes from 'prop-types'
 
 class Login extends Component {
   constructor(props) {
@@ -68,6 +69,10 @@ class Login extends Component {
       </form>
     )
   }
+}
+
+Login.propTypes = {
+  updateAppState: PropTypes.func
 }
 
 export default Login;

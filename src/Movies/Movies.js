@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './movies.css';
+import PropTypes from 'prop-types'
 
 function Movies(props) {
   let userRatings = props.moviesList.reduce((totalRatings, currentMovie) => {
     let currentRating;
-    if (props.userRatings) {
+    if (props.userRatings.hasOwnProperty("ratings")) {
       currentRating = props.userRatings.ratings.find(rating => rating.movie_id === currentMovie.id);
     }
-    if (currentRating && props.loggedIn) {
+    if (currentRating && props.loggedIn.hasOwnProperty("user")) {
       totalRatings[currentMovie.id] = currentRating.rating;
     } else if (props.loggedIn) {
       totalRatings[currentMovie.id] = "You haven't rated this yet!";
@@ -37,6 +38,12 @@ function Movies(props) {
       {moviesToDisplay.length ? moviesToDisplay : <h1>Please wait, loading movies</h1>}
     </section>
   )
+}
+
+Movies.propTypes = {
+  moviesList: PropTypes.array,
+  userRatings: PropTypes.object,
+  loggedIn: PropTypes.object,
 }
 
 export default Movies;
