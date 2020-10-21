@@ -60,7 +60,7 @@ class Login extends Component {
         <NavLink
           to="/" 
           onClick={this.loginUser}
-          className="login-button"
+          className="nav"
           data-testid="login-button">
           Login
         </NavLink>
