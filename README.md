@@ -15,13 +15,20 @@
 
 ## Overview
 
-  This app is an activity tracker that offers a look into the user's health data for a given week. It displays activity, hydration, and sleep data. There are in depth insights for the current day, as well as several graphs visualizing weekly data. There is also a section to vew the global average activity of all users for the current day. 
+  This application was the first project of Module 3 in the Front-End Development program at Turing School of Software and Design. Through creating this website, we utilized React and React testing library to develop a movie rating website. We had 2.5 weeks to build out this fully featured app while learning several new technologies in the process.
+  
+  This app allows users to view average ratings of movies, and look through details for each movie. Upon logging in, the application also lets the user add and remove personal ratings for each film. 
 
 > [Back to the top](#rancid)
 ---
 ## Setup
 
-  We are Front-End students at the Turing School of Software and Design. This project was our paired project for Module 2, and was built with a focus on learning how to use object and array prototype methods to perform data manipulation on large datasets.
+  To get this application running on your machine, do the following:
+    * Clone down this repo.
+    * `cd` into the newly created repo.
+    * run `npm install` in the terminal.
+    * run `npm start` in the terminal.
+    * If a browser window doesn't automatically open, navigate to `http://localhost:3000/movies/400160` in your browser.
 
 > [Back to the top](#rancid)
 ---
