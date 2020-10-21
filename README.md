@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rancid Tomatillos
 
-## Available Scripts
+> A Front-End Project by [Bret Merritt](https://github.com/bretm9) and [Carlyle "Dougie" Douglas](https://github.com/DougieDev)
+<!-- > [Link to project]() -->
+---
+## Contents
+1. [Overview](#overview)
+1. [Setup](#setup)
+1. [Technologies](#technologies)
+1. [Design](#design)
+1. [Evolution](#evolution)
+1. [Challenges](#challenges)
+1. [Successes](#successes)
+---
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+  This app is an activity tracker that offers a look into the user's health data for a given week. It displays activity, hydration, and sleep data. There are in depth insights for the current day, as well as several graphs visualizing weekly data. There is also a section to vew the global average activity of all users for the current day. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> [Back to the top](#rancid)
+---
+## Setup
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  We are Front-End students at the Turing School of Software and Design. This project was our paired project for Module 2, and was built with a focus on learning how to use object and array prototype methods to perform data manipulation on large datasets.
 
-### `npm test`
+> [Back to the top](#rancid)
+---
+ ## Technologies
+  - JavaScript
+  - React
+  - Router
+  - React Testing Library
+  - Jest
+  - Fetch API
+  - PropType
+  - userEvent
+  - CSS
+  - Git
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> [Back to the top](#rancid)
+---
+## Design
 
-### `npm run build`
+  The homepage is organised to clearly and simply display movies in a grid. under each movie image is the title and the average rating. If the user is logged in, they will also see their personal rating for each movie here.
+  
+  <img width="840" alt="homepage" src="https://user-images.githubusercontent.com/14350203/96666578-a85ef080-1314-11eb-8b4c-94109b4d13a7.png">
+  
+  The Login screen allows the user to input their email and password to login to the website. If the user is not yet logged in, clicking the login button in the header will bring them here. If the user is logged in, clicking the logout button in the header will bring them to this screen.
+  
+  <img width="840" alt="login" src="https://user-images.githubusercontent.com/14350203/96666609-b745a300-1314-11eb-86e8-528e01c1f822.png">
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Clicking on a movie on the homepage will open the page for that specific movie. Here there are extra details for that movie. If the user is logged in, they will also see a drop down to add the their own personal rating for said movie. Once they select a score they can hit the add rating button to submit the rating. They can also remove their rating by hitting the remove rating button.
+  
+  <img width="840" alt="showpage" src="https://user-images.githubusercontent.com/14350203/96666625-c298ce80-1314-11eb-8dd1-39aa5452e6ac.png">
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+> [Back to the top](#rancid)
+---
+## Evolution
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  For this project we used a [GitHub Project Board](https://github.com/bretm9/rancid-tomatillos/projects/1) to plan out our course-of-action, and wireframes to visualise our design.
+  
+  <img width="840" alt="homepage-wireframe" src="https://user-images.githubusercontent.com/14350203/96666703-ea883200-1314-11eb-9a3d-4cfb6d618560.png">
+  
+  <img width="840" alt="login-wireframe" src="https://user-images.githubusercontent.com/14350203/96666727-f673f400-1314-11eb-9f30-1f09e5cad853.png">
+  
+  <img width="840" alt="showpage-wireframe" src="https://user-images.githubusercontent.com/14350203/96666747-025fb600-1315-11eb-97a5-af91d4cbcfb0.png">
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> [Back to the top](#rancid)
+---
+## Challenges  
+ 
+  This project was challenging since it was the first venture into React and React testing. Additionally, it was the first time really utilizing async/await. These had some learning curves, but once getting over the initial hurdles, these technologies became vital and speedy tools to create this fully featured application.
+ 
+> [Back to the top](#rancid)
+---
+## Successes
+ 
+  Throughout this project there were some thrilling and satisfying wins. Getting the application state to properly stay up-to-date with the API was a great feeling. Another big success was examplifying "data-down, actions-up" in practice. Taking in data through props and sending changes up to the App component through passed methods really locked this key concept into our thinking as developers.
+  
+> [Back to the top](#rancid)
+ ---
