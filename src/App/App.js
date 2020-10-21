@@ -12,8 +12,8 @@ class App extends Component {
     super()
     this.state= {
       movies: [],
-      loginData: "",
-      userRatings: "",
+      loginData: {},
+      userRatings: {},
       error: ''
     }
   }
@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   logoutUser = () => {
-    this.setState({ loginData: "", userRatings: "" });
+    this.setState({ loginData: {}, userRatings: {} });
   }
 
   render() { 
