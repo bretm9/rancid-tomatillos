@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 function Header(props) {
-  if (props.loginData) {
+  if (props.loginData.hasOwnProperty("user")) {
     return (
       <section className="header">
         <h1>Rancid Tomatillos</h1>
@@ -20,6 +21,11 @@ function Header(props) {
       <NavLink to="/login" className="nav">Login Page</NavLink>
     </section>
   )
+}
+
+Header.propTypes = {
+  loginData: PropTypes.object,
+  logoutUser: PropTypes.func
 }
 
 export default Header;
