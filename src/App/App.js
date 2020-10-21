@@ -44,10 +44,14 @@ class App extends Component {
     }
   }
 
+  logoutUser = () => {
+    this.setState({ loginData: "", userRatings: "" });
+  }
+
   render() { 
     return(
       <main className="App">
-        <Header loginData={this.state.loginData}/>
+        <Header loginData={this.state.loginData} logoutUser={this.logoutUser}/>
         {this.state.error && <h2>{this.state.error}</h2>}
         <Route 
           path="/movies/:id" 
