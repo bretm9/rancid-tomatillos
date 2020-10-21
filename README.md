@@ -19,18 +19,18 @@
   
   This app allows users to view average ratings of movies, and look through details for each movie. Upon logging in, the application also lets the user add and remove personal ratings for each film. 
 
-> [Back to the top](#rancid)
+> [Back to the top](#rancid-tomatillos)
 ---
 ## Setup
 
   To get this application running on your machine, do the following:
-    * Clone down this repo.
-    * `cd` into the newly created repo.
-    * run `npm install` in the terminal.
-    * run `npm start` in the terminal.
-    * If a browser window doesn't automatically open, navigate to `http://localhost:3000/movies/400160` in your browser.
+   - Clone down this repo.
+   - `cd` into the newly created repo.
+   - run `npm install` in the terminal.
+   - run `npm start` in the terminal.
+   - If a browser window doesn't automatically open, navigate to `http://localhost:3000/movies/400160` in your browser.
 
-> [Back to the top](#rancid)
+> [Back to the top](#rancid-tomatillos)
 ---
  ## Technologies
   - JavaScript
@@ -44,7 +44,7 @@
   - CSS
   - Git
 
-> [Back to the top](#rancid)
+> [Back to the top](#rancid-tomatillos)
 ---
 ## Design
 
@@ -60,7 +60,7 @@
   
   <img width="840" alt="showpage" src="https://user-images.githubusercontent.com/14350203/96666625-c298ce80-1314-11eb-8dd1-39aa5452e6ac.png">
 
-> [Back to the top](#rancid)
+> [Back to the top](#rancid-tomatillos)
 ---
 ## Evolution
 
@@ -72,17 +72,17 @@
   
   <img width="840" alt="showpage-wireframe" src="https://user-images.githubusercontent.com/14350203/96666747-025fb600-1315-11eb-97a5-af91d4cbcfb0.png">
 
-> [Back to the top](#rancid)
+> [Back to the top](#rancid-tomatillos)
 ---
 ## Challenges  
  
   This project was challenging since it was the first venture into React and React testing. Additionally, it was the first time really utilizing async/await. These had some learning curves, but once getting over the initial hurdles, these technologies became vital and speedy tools to create this fully featured application.
  
-> [Back to the top](#rancid)
+> [Back to the top](#rancid-tomatillos)
 ---
 ## Successes
  
   Throughout this project there were some thrilling and satisfying wins. Getting the application state to properly stay up-to-date with the API was a great feeling. Another big success was examplifying "data-down, actions-up" in practice. Taking in data through props and sending changes up to the App component through passed methods really locked this key concept into our thinking as developers.
   
-> [Back to the top](#rancid)
+> [Back to the top](#rancid-tomatillos)
  ---
