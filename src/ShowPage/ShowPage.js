@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getMovieDetails, postUserRating, deleteUserRating } from "../apiCalls";
+import PropTypes from 'prop-types'
 
 class ShowPage extends Component {
   constructor() {
@@ -100,5 +101,11 @@ class ShowPage extends Component {
   }
 }
 
+ShowPage.propTypes = {
+  movie: PropTypes.object,
+  userRatings: PropTypes.object,
+  loginData: PropTypes.object,
+  updateUserRatings: PropTypes.func
+}
 
 export default ShowPage
